@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\sandra\Documents\luci\SeminarioFinal\Paginas secundarias de la principal\imagenes.css"> <!-- Enlazamos el CSS -->
+    <title>Guía Turística de Portugal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Incluir CSS de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            margin: 0 auto; /* Centra el mapa */
+        } 
+        .attraction-image {
+            width: 100%; /* O puedes usar un valor fijo, como 300px */
+            height: 200px; /* Establece una altura fija */
+            object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra horizontalmente todos los elementos dentro del contenedor */
+        }
+
+        h1, h2 {
+            text-align: center; /* Centra los títulos */
+        }
+
+        ul {
+            list-style-type: none; /* Elimina los puntos de la lista */
+        }
+
+        li {
+            margin: 10px 0; /* Espaciado entre los elementos de la lista */
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 id="country-name">Portugal</h1>
+    <img id="country-flag" src="BanderaPortugal.JPG" alt="Bandera de Portugal" class="img-fluid">
+    <p><strong>Moneda:</strong> <span id="currency"></span></p>
+    <p><strong>Cantidad de Habitantes:</strong> <span id="population"></span></p>
+
+    <h2>Mapa del País</h2> 
+    <!-- Div para el mapa -->
+    <div id="map"></div>
+
+    <h2>Atracciones Turísticas</h2>
+    <ul id="attractions-list">
+        <!-- Lista de atracciones -->
+        <li><a href="#" onclick="focusOnAttraction(38.71667, -9.13933, 'Paginas secundarias de la principal/Lisboa.html')">Atracción 1: Lisboa</a></li>
+        <li><a href="#" onclick="focusOnAttraction(41.14961, -8.61099, 'Paginas secundarias de la principal/Oporto.html')">Atracción 2: Oporto</a></li>
+        <li><a href="#" onclick="focusOnAttraction(38.78935, -9.39425, 'Paginas secundarias de la principal/Sintra.html')">Atracción 3: Sintra</a></li>
+        <li><a href="#" onclick="focusOnAttraction(38.71117, -9.2299, 'Paginas secundarias de la principal/PalacioNacionalDeQueluz.html')">Atracción 4: Palacio Nacional de Queluz</a></li>
+        <li><a href="#" onclick="focusOnAttraction(38.6977, -9.4208, 'Paginas secundarias de la principal/Cascais.html')">Atracción 5: Cascais</a></li>
+        <li><a href="#" onclick="focusOnAttraction(37.0174, -8.2470, 'Paginas secundarias de la principal/Algarve.html')">Atracción 6: El Algarve</a></li>
+    </ul>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<!-- Incluir JS de Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<script>
+// Variables globales
+let map;
+let markers = []; // Array para almacenar los marcadores
+
+// Lógica para cargar datos de la API RestCountries
+$(document).ready(function() {
+    $.get('https://restcountries.com/v3.1/name/portugal', function(data) {
+        const country = data[0];
+        $('#country-flag').attr('src', country.flags.png);
+        $('#currency').text(country.currencies[Object.keys(country.currencies)[0]].name);
+        $('#population').text(country.population);
+        
+        // Inicializar el mapa después de cargar los datos
+        initMap();
+    });
+});
+
+// Inicializar el mapa usando Leaflet
+function initMap() {
+    const portugalLocation = [39.399872, -8.224454]; // Coordenadas de Portugal
+    map = L.map('map').setView(portugalLocation, 6); // Crear el mapa y centrarlo en Portugal
+
+    // Capa de OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // Marcadores para las atracciones
+    const attractions = [
+        { name: "Lisboa", location: [38.71667, -9.13933] },
+        { name: "Oporto", location: [41.14961, -8.61099] },
+        { name: "Sintra", location: [38.78935, -9.39425] },
+        { name: "Palacio Nacional de Queluz", location: [38.750446, -9.258224] },
+        { name: "Cascais", location: [38.6977, -9.4208] },
+        { name: "El Algarve", location: [37.0174, -8.2470] },
+    ];
+
+    attractions.forEach(attraction => {
+        const marker = L.marker(attraction.location).addTo(map);
+        marker.bindPopup(attraction.name); // Popup con el nombre de la atracción
+        markers.push(marker); // Almacenar el marcador en el array
+    });
+}
+
+// Función para centrar el mapa en una atracción específica
+function focusOnAttraction(lat, lng, url) {
+    const attractionLocation = [lat, lng];
+
+   // Mover el mapa a la ubicación de la atracción
+   map.setView(attractionLocation, 10); 
+    
+   // Limpiar marcadores anteriores (si es necesario)
+   markers.forEach(marker => marker.remove()); // Eliminar todos los marcadores del mapa
+    
+   // Crear un nuevo marcador para la atracción seleccionada
+   const newMarker = L.marker(attractionLocation).addTo(map);
+    
+   // Agregar un popup al nuevo marcador
+   newMarker.bindPopup("Atracción seleccionada").openPopup();
+
+   // Preguntar si desea abrir la página con información turística
+   setTimeout(() => {
+       if (confirm("¿Deseas abrir la página con información turística sobre esta atracción?")) {
+           window.open(url, "_blank"); // Abrir la URL en una nueva pestaña
+       } 
+       // Si se presiona Cancelar, simplemente no hacemos nada y mantenemos el marcador
+   }, 2000); // Esperar 2 segundos antes de mostrar el mensaje
+}
+</script>
+
+</body>
+</html>
