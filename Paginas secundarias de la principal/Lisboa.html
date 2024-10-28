@@ -3,23 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atracción: Lisboa</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #343a40;
+        }
+        p {
+            text-align: center; /* Centrar los párrafos */
+        }
         .attraction-image {
             width: 100%;
             height: auto;
+            max-height: 200px; /* Altura máxima para uniformidad */
+            object-fit: cover; /* Mantiene la proporción de la imagen */
         }
-        .container {
-            margin-top: 20px;
+        .gallery {
+            display: flex;
+            flex-wrap: wrap; /* Permite que las imágenes se envuelvan en varias líneas */
+            justify-content: center; /* Centra las imágenes horizontalmente */
+            margin-top: 20px; /* Espacio superior */
+        }
+        .gallery-item {
+            flex: 1 0 30%; /* Cada imagen ocupará un 30% del ancho del contenedor */
+            margin: 10px; /* Espacio alrededor de cada imagen */
+            text-align: center; /* Centra el texto debajo de cada imagen */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .button-container {
+            text-align: center; /* Centrar los botones */
+            margin-top: 20px; /* Espacio superior para los botones */
         }
     </style>
+    <title>Atracción: Lisboa</title>
 </head>
 <body>
 
 <div class="container">
     <h1>Atracción: Lisboa</h1>
-    <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\Fotos de la pagina\VISTALISBOA.JPG.png"> <!-- Cambia la ruta a tu imagen -->
+    <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\LisboaMujer.JPG.jpg" class="img-fluid attraction-image"> <!-- Cambia la ruta a tu imagen -->
     
     <h2>Descripción</h2>
     <p>Lisboa, la capital de Portugal, es conocida por su rica historia, arquitectura impresionante y vibrante vida cultural. Desde el histórico barrio de Alfama hasta el moderno Parque de las Naciones, hay algo para todos.</p>
@@ -32,46 +76,47 @@
         <li>El tranvía 28</li>
     </ul>
 
-    
     <h2>Galería</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\Fotos de la pagina\CASTILLOSANJORGE.JPG" alt="Castillo de San Jorge" class="img-fluid attraction-image">
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\CASTILLOSANJORGE.JPG" alt="Castillo de San Jorge" class="img-fluid attraction-image">
             <p>Castillo de San Jorge</p>
         </div>
-        <div class="col-md-4">
-            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\Fotos de la pagina\TorreBelen.JPG (2).jpg" alt="Torre de Belém" class="img-fluid attraction-image">
+        <div class="gallery-item">
+            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\TorreBelen.JPG (2).jpg" alt="Torre de Belém" class="img-fluid attraction-image">
             <p>Torre de Belém</p>
         </div>
-        <div class="col-md-4">
-            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\Fotos de la pagina\monasteriodelosjeronimos.JPG" alt="Monasterio de los Jerónimos" class="img-fluid attraction-image">
+        <div class="gallery-item">
+            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\monasteriodelosjeronimos.JPG" alt="Monasterio de los Jerónimos" class="img-fluid attraction-image">
             <p>Monasterio de los Jerónimos</p>
         </div>
-        <div class="col-md-4">
-            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\Fotos de la pagina\transvia.JPG" alt="Monasterio de los Jerónimos" class="img-fluid attraction-image">
-            <p>El Tranvía 28</p>
     </div>
 
     <h2>Gastronomía</h2>
     <p>No te olvides de probar los famosos pasteles de nata en la Pastelería de Belém.</p>
-    <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\Fotos de la pagina\pastelesnata.JPG" alt="Monasterio de los Jerónimos" class="img-fluid attraction-image">
-    <l1>El pastel de nata ya se ha convertido en el dulce más famoso de todo Portugal, del que existen incluso concursos y el cual es imposible no probar en una visita a Lisboa. Estos bocados son fáciles de confundir con los pastéis de Belém, una de las siete maravillas de la gastronomía portuguesa que solo se hacen en la fábrica donde nacieron. Su receta no ha trascendido, pero los pasteles de nata son una copia casi perfecta y es la que se encuentra en cualquier rincón del país. Con una base de hojaldre rellena de crema y nata, la parte superior se adereza con canela y se endurece un poco, dándole un toque tostado que hace de los bocados una explosión de texturas.</li>
-    
-   
-    
-        <h2>Más Información</h2>
-    
 
-        <p>Para más información sobre Sintra, visita su página oficial de turismo.</p> 
-          <!-- Enlace a la página oficial -->
-          <a href="https://www.visitportugal.com/en" target="_blank" class="btn btn-primary">Visitar Página Oficial</a>
-          
-          <p>Para más información sobre Portugal, visita nuestra página oficial de turismo.</p> 
-          <a href="file:///C:/Users/sandra/Documents/luci/SeminarioFinal/PaginaPortugal.html.html#" class="btn btn-primary">Volver a la página principal</a>
-      </div>
-      
-      </body>
-      </html>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\pastelesnata.JPG" alt="Pasteles de Nata" class="img-fluid attraction-image">
+            <p>Pasteles de Nata</p>
+        </div>
+    </div>
 
+    <p>El pastel de nata ya se ha convertido en el dulce más famoso de todo Portugal, del que existen incluso concursos y el cual es imposible no probar en una visita a Lisboa.</p>
 
+    <h2>Más Información</h2>
+    <p>Para más información sobre Lisboa, visita su página oficial de turismo.</p>
 
+    <!-- Contenedor para los botones -->
+    <div class="button-container">
+        <!-- Enlace a la página oficial -->
+        <a href="https://www.visitportugal.com/en" target="_blank" class="btn btn-primary">Visitar Página Oficial</a>
+
+        <!-- Enlace a la página principal -->
+        <a href="file:///C:/Users/sandra/Documents/luci/SeminarioFinal/PaginaPortugal.html#" class="btn btn-primary">Volver a la página principal</a>
+    </div>
+
+</div>
+
+</body>
+</html>

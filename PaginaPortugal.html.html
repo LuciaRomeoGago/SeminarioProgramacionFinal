@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -63,9 +63,8 @@
         <li class="list-group-item"><a href="#" onclick="focusOnAttraction(38.71667, -9.13933, 'Paginas secundarias de la principal/Lisboa.html')">Atracción 1: Lisboa</a></li>
         <li class="list-group-item"><a href="#" onclick="focusOnAttraction(41.14961, -8.61099, 'Paginas secundarias de la principal/Oporto.html')">Atracción 2: Oporto</a></li>
         <li class="list-group-item"><a href="#" onclick="focusOnAttraction(38.78935, -9.39425, 'Paginas secundarias de la principal/Sintra.html')">Atracción 3: Sintra</a></li>
-        <li class="list-group-item"><a href="#" onclick="focusOnAttraction(38.71117, -9.2299, 'Paginas secundarias de la principal/PalacioNacionalDeQueluz.html')">Atracción 4: Palacio Nacional de Queluz</a></li>
-        <li class="list-group-item"><a href="#" onclick="focusOnAttraction(38.6977, -9.4208, 'Paginas secundarias de la principal/Cascais.html')">Atracción 5: Cascais</a></li>
-        <li class="list-group-item"><a href="#" onclick="focusOnAttraction(37.0174, -8.2470, '/home/usuario/Seminario de programacion/Final/SeminarioProgramacionFinal/Paginas secundarias de la principal/ElAlgarve.html')">Atracción 6: El Algarve</a></li>
+        <li class="list-group-item"><a href="#" onclick="focusOnAttraction(38.6977, -9.4208, 'Paginas secundarias de la principal/Cascais.html')">Atracción 4: Cascais</a></li>
+        <li class="list-group-item"><a href="#" onclick="focusOnAttraction(37.0174, -8.2470, 'Paginas secundarias de la principal/ElAlgarve.html')">Atracción 5: El Algarve</a></li>
     </ul>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -116,7 +115,6 @@ function initMap() {
         { name: "Lisboa", location: [38.71667, -9.13933] },
         { name: "Oporto", location: [41.14961, -8.61099] },
         { name: "Sintra", location: [38.78935, -9.39425] },
-        { name: "Palacio Nacional de Queluz", location: [38.750446, -9.258224] },
         { name: "Cascais", location: [38.6977, -9.4208] },
         { name: "El Algarve", location: [37.0174, -8.2470] },
     ];
@@ -129,7 +127,7 @@ function initMap() {
 }
 
 // Función para centrar el mapa en una atracción específica
-function focusOnAttraction(lat, lng) {
+function focusOnAttraction(lat, lng, url) {
     const attractionLocation = [lat, lng];
    map.setView(attractionLocation, 10); 
     

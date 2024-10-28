@@ -3,15 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\sandra\Documents\luci\SeminarioFinal\Paginas secundarias de la principal\imagenes.css">
     <title>Atracción: Sintra</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #343a40;
+        }
+        p {
+            text-align: center; /* Centrar los párrafos */
+        }
         .attraction-image {
             width: 100%;
             height: auto;
+            max-height: 200px; /* Altura máxima para uniformidad */
+            object-fit: cover; /* Mantiene la proporción de la imagen */
         }
-        .container {
-            margin-top: 20px;
+        .gallery {
+            display: flex;
+            flex-wrap: wrap; /* Permite que las imágenes se envuelvan en varias líneas */
+            justify-content: center; /* Centra las imágenes horizontalmente */
+            margin-top: 20px; /* Espacio superior */
+        }
+        .gallery-item {
+            flex: 1 0 30%; /* Cada imagen ocupará un 30% del ancho del contenedor */
+            margin: 10px; /* Espacio alrededor de cada imagen */
+            text-align: center; /* Centra el texto debajo de cada imagen */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .button-container {
+            text-align: center; /* Centrar los botones */
+            margin-top: 20px; /* Espacio superior para los botones */
         }
     </style>
 </head>
@@ -19,7 +64,7 @@
 
 <div class="container">
     <h1>Atracción: Sintra (Palacio da Pena)</h1>
-    <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\Fotos de la pagina\sintra.JPG" alt="Palacio da Pena en Sintra" class="img-fluid attraction-image"> <!-- Cambia la ruta a tu imagen -->
+    <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\PALACIONACIONALDESINTRA.JPG" class="img-fluid attraction-image"> <!-- Cambia la ruta a tu imagen -->
     
     <h2>Descripción</h2>
     <p>Sintra es famosa por sus palacios románticos y paisajes montañosos. El Palacio da Pena es uno de los ejemplos más destacados del romanticismo en arquitectura, con colores vibrantes y una ubicación impresionante en la cima de una colina.</p>
@@ -28,49 +73,50 @@
     <ul>
         <li>Palacio da Pena</li>
         <li>Castillo de los Moros (Castelo dos Mouros)</li>
-        <li>Palacio Nacional de Sintra</li>
         <li>Quinta da Regaleira</li>
     </ul>
 
     <h2>Galería</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\Fotos de la pagina\PALACIO DA PENA SINTRA.JPG" alt= "Palacio da Pena" class="img-fluid attraction-image">
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\PALACIO DA PENA SINTRA.JPG" alt= "Palacio da Pena" class="img-fluid attraction-image">
             <p>Palacio da Pena</p>
         </div>
-        <div class="col-md-4">
-            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\Fotos de la pagina\CASTILLODELOS MOROS.JPG" alt="Castillo de los Moros" class="img-fluid attraction-image">
+        <div class="gallery-item">
+            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\CASTILLODELOS MOROS.JPG" alt="Castillo de los Moros" class="img-fluid attraction-image">
             <p>Castillo de los Moros</p>
         </div>
-        <div class="col-md-4">
-            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\Fotos de la pagina\QUINTADAREGALEIRA.JPG" alt="Quinta da Regaleira" class="img-fluid attraction-image">
+        <div class="gallery-item">
+            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\QUINTADAREGALEIRA.JPG" alt="Quinta da Regaleira" class="img-fluid attraction-image">
             <p>Quinta da Regaleira</p>
-        </div>
-        <div class="col-md-4">
-            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\Fotos de la pagina\PALACIONACIONALDESINTRA.JPG" alt="Palacio Nacional de Sinta" class="img-fluid attraction-image">
-            <p>Palacio Nacional de Sintra</p>
         </div>
     </div>
 
     <h2>Gastronomía</h2>
     <p>No olvides probar los "Travesseiros", un dulce tradicional que se encuentra en muchas pastelerías de Sintra.</p>
-    <div class="col-md-4">
-        <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\Fotos de la pagina\traves.jpg" alt="Travesseiros" class="img-fluid attraction-image">
-        <p>Travesseiros</p>
-    </div>
-    <p>Se trata de un dulce de masa de milhojas relleno con mucha pero mucha almendra (sin piel), canela, yemas de huevo y azúcar, y son la especialidad del “Piriquita”</p>
-    
-    
-    <h2>Más Información</h2>
-    
 
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\traves.jpg" alt="Travesseiros" class="img-fluid attraction-image">
+            <p>Travesseiros</p>
+        </div>
+    </div>
+
+    <p>Se trata de un dulce de masa de milhojas relleno con mucha pero mucha almendra (sin piel), canela, yemas de huevo y azúcar, y son la especialidad del “Piriquita”</p>
+
+    <h2>Más Información</h2>
     <p>Para más información sobre Sintra, visita su página oficial de turismo.</p> 
-      <!-- Enlace a la página oficial -->
-      <a href="https://www.visitportugal.com/en" target="_blank" class="btn btn-primary">Visitar Página Oficial</a>
-      
-      <p>Para más información sobre Portugal, visita nuestra página oficial de turismo.</p> 
-      <a href="file:///C:/Users/sandra/Documents/luci/SeminarioFinal/PaginaPortugal.html.html#" class="btn btn-primary">Volver a la página principal</a>
-  </div>
-  
-  </body>
-  </html>
+
+    <!-- Contenedor para los botones -->
+    <div class="button-container">
+        <!-- Enlace a la página oficial -->
+        <a href="https://www.visitportugal.com/en" target="_blank" class="btn btn-primary">Visitar Página Oficial</a>
+
+        <!-- Enlace a la página principal -->
+        <a href="file:///C:/Users/sandra/Documents/luci/SeminarioFinal/PaginaPortugal.html#" class="btn btn-primary">Volver a la página principal</a>
+    </div>
+
+</div>
+
+</body>
+</html>
