@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,99 +10,171 @@
             background-color: #f8f9fa;
             font-family: Arial, sans-serif;
         }
+
         .container {
             max-width: 1200px;
             margin: auto;
             padding: 20px;
         }
-        h1, h2 {
+
+        h1,
+        h2 {
             text-align: center;
             color: #343a40;
         }
+
         p {
-            text-align: center; /* Centrar los párrafos */
+            text-align: center;
+            /* Centrar los párrafos */
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
             margin: 10px 0;
         }
+
         a {
             text-decoration: none;
             color: #007bff;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         .button-container {
-            text-align: center; /* Centrar los botones */
-            margin-top: 20px; /* Espacio superior para los botones */
+            text-align: center;
+            /* Centrar los botones */
+            margin-top: 20px;
+            /* Espacio superior para los botones */
         }
+
         .attraction-image {
             width: 100%;
             height: auto;
-            max-height: 200px; /* Altura máxima para uniformidad */
-            object-fit: cover; /* Mantiene la proporción de la imagen */
-            margin-bottom: 20px; /* Espacio inferior para las imágenes */
+            /* Mantiene la proporción de la imagen */
+            max-height: 200px;
+            /* Altura máxima para uniformidad */
+            object-fit: contain;
+            /* Muestra la imagen completa sin recortar */
+            margin-bottom: 20px;
+            /* Espacio inferior para las imágenes */
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            /* Permite que las imágenes se envuelvan en varias líneas */
+            justify-content: center;
+            /* Centra las imágenes horizontalmente */
+            margin-top: 20px;
+            /* Espacio superior */
+        }
+
+        .gallery-item {
+            flex: 1 0 30%;
+            /* Cada imagen ocupará un 30% del ancho del contenedor */
+            margin: 10px;
+            /* Espacio alrededor de cada imagen */
+            text-align: center;
+            /* Centra el texto debajo de cada imagen */
         }
     </style>
     <title>Atracción: Cascais</title>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>Atracción: Cascais</h1>
+    <div class="container">
+        <h1>Atracción: Cascais</h1>
 
-    <!-- Imagen principal de Cascais -->
-    <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\cascais.jpg" alt="Cascais" class="img-fluid attraction-image"> <!-- Cambia la ruta a tu imagen -->
+        <!-- Imagen principal de Cascais -->
+        <a href="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\cascais.jpg"
+            target="_blank">
+            <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\cascais.jpg"
+                alt="Cascais" class="img-fluid attraction-image">
+        </a>
 
-    <h2>Descripción</h2>
-    <p>Cascais es una hermosa ciudad costera conocida por sus playas, su puerto y su ambiente relajado. Es un destino popular para los turistas que buscan disfrutar del sol y el mar.</p>
+        <h2>Descripción</h2>
+        <p>Cascais es una hermosa ciudad costera conocida por sus playas, su puerto y su ambiente relajado. Es un
+            destino popular para los turistas que buscan disfrutar del sol y el mar.</p>
 
-    <h2>Atracciones Principales</h2>
-    <ul>
-        <li>Playa da Rainha</li>
-        <li>Boca do Inferno</li>
-        <li>Cabo da Roca (el punto más occidental de Europa)</li>
-    </ul>
+        <h2>Atracciones Principales</h2>
+        <ul>
+            <li>Playa da Rainha</li>
+            <li>Boca do Inferno</li>
+            <li>Cabo da Roca (el punto más occidental de Europa)</li>
+        </ul>
 
-    <h2>Galería</h2>
-    <div class="gallery">
-        <!-- Imágenes de la galería -->
-        <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\playadareihna.cascais.jpg" alt="Playa da Rainha" class="img-fluid attraction-image"> <!-- Cambia la ruta a tu imagen -->
-        <p>Playa da Rainha</p>
+        <h2>Galería</h2>
+        <div class="gallery">
+            <!-- Imágenes de la galería -->
+            <div class="gallery-item">
+                <a href="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\playadareinaHD.jpg.jpeg"
+                    target="_blank">
+                    <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\playadareinaHD.jpg.jpeg"
+                        alt="Playa da Rainha" class="img-fluid attraction-image">
 
-        <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\Boca-do-Infernocascais.jpg" alt="Boca do Inferno" class="img-fluid attraction-image"> <!-- Cambia la ruta a tu imagen -->
-        <p>Boca do Inferno</p>
+                    <p>Playa da Rainha</p>
+                </a>
+            </div>
 
-        <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\Cabo_da_Roca_on_sunset.jpg" alt="Cabo da Roca" class="img-fluid attraction-image"> <!-- Cambia la ruta a tu imagen -->
-        <p>Cabo da Roca</p>
+            <div class="gallery-item">
+                <a href="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\bocadoenfernoHD.jpg"
+                    target="_blank">
+                    <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\bocadoenfernoHD.jpg"
+                        alt="Boca do Inferno" class="img-fluid attraction-image">
+
+                    <p>Boca do Inferno</p>
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\cabodaroca.jpg.jpeg"
+                    target="_blank">
+                    <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\cabodaroca.jpg.jpeg"
+                        alt="Cabo da Roca" class="img-fluid attraction-image">
+                    <p>Cabo da Roca</p>
+                </a>
+            </div>
+        </div>
+
+        <h2>Gastronomía</h2>
+        <p>No te pierdas los mariscos frescos y la famosa "queijo da serra".</p>
+
+        <!-- Imagen de gastronomía -->
+        <div class="gallery-item">
+            <a href="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\queijoHD.jpg.jpeg"
+                target="_blank">
+                <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\queijoHD.jpg.jpeg"
+                    alt="Queijo da Serra" class="img-fluid attraction-image">
+                <p>Queijo da Serra</p>
+            </a>
+        </div>
+
+        <p>Este queso es uno de los más famosos de la cocina lusa. Su producción conlleva reglas muy rigurosas de
+            composición, delimitando su origen a ciertas zonas de Portugal.</p>
+
+        <h2>Más Información</h2>
+        <p>Para más información sobre Cascais, visita su página oficial de turismo.</p>
+
+        <!-- Contenedor para los botones -->
+        <div class="button-container">
+            <!-- Enlace a la página oficial -->
+            <a href="https://www.visitportugal.com/en" target="_blank" class="btn btn-primary">Visitar Página
+                Oficial</a>
+
+            <!-- Enlace a la página principal -->
+            <a href="file:///C:/Users/sandra/Documents/luci/SeminarioFinal/PaginaPortugal.html#"
+                class="btn btn-primary">Volver a la página principal</a>
+        </div>
+
     </div>
-
-    <h2>Gastronomía</h2>
-    <p>No te pierdas los mariscos frescos y la famosa "queijo da serra".</p>
-
-    <!-- Imagen de gastronomía -->
-    <img src="C:\Users\sandra\Documents\luci\SeminarioFinal\SeminarioProgramacionFinal\Fotos de la pagina\queijo-da-serra-cascais.jpg" alt="Queijo da Serra" class="img-fluid attraction-image"> <!-- Cambia la ruta a tu imagen -->
-    <p>Queijo da Serra</p>
-
-    <p>Este queso es uno de los más famosos de la cocina lusa. Su producción conlleva reglas muy rigurosas de composición, delimitando su origen a ciertas zonas de Portugal.</p>
-
-    <h2>Más Información</h2>
-    <p>Para más información sobre Cascais, visita su página oficial de turismo.</p> 
-
-    <!-- Contenedor para los botones -->
-    <div class="button-container">
-        <!-- Enlace a la página oficial -->
-        <a href="https://www.visitportugal.com/en" target="_blank" class="btn btn-primary">Visitar Página Oficial</a>
-        
-        <!-- Enlace a la página principal -->
-        <a href="file:///C:/Users/sandra/Documents/luci/SeminarioFinal/PaginaPortugal.html#" class="btn btn-primary">Volver a la página principal</a>
-    </div>
-
-</div>
 
 </body>
+
 </html>
