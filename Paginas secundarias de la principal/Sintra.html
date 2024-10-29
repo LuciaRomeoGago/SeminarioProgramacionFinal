@@ -9,6 +9,10 @@
     <title>Atracción: Sintra</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #f8f9fa;
             font-family: Arial, sans-serif;
@@ -18,10 +22,10 @@
             max-width: 1200px;
             margin: auto;
             padding: 20px;
+            flex-wrap: wrap;
         }
 
-        h1,
-        h2 {
+        h1, h2 {
             text-align: center;
             color: #343a40;
         }
@@ -85,9 +89,18 @@
             text-align: center;
             /* Centra el texto debajo de cada imagen */
         }
+        
+        .list-group-item {
+         margin: 10px 0; /* Espacio entre los elementos de la lista */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+            }
+        }
     </style>
 </head>
-
 <body>
 
     <div class="container">
