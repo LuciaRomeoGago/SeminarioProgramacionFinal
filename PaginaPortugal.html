@@ -124,7 +124,34 @@
         $(document).ready(function() {
             cargarTuristas();
         });
-</script>
+// Manejar el envío del formulario
+$('#turista-form').on('submit', function(event) {
+        event.preventDefault(); // Evitar el envío normal del formulario
+
+        const turista = {
+            nombre: $('#nombre').val(),
+            apellido: $('#apellido').val(),
+            pasaporte: $('#pasaporte').val()
+        };
+
+        // Enviar datos a la API
+        $.post('http://localhost:3000/turistas', turista)
+            .done(function(data) {
+                alert('Turista registrado con éxito!');
+                $('#turista-form')[0].reset(); // Reiniciar el formulario
+                
+                // Agregar el nuevo turista a la lista sin recargar
+                $('#lista-turistas').append(`<li>${turista.nombre} ${turista.apellido} - ${turista.pasaporte}</li>`);
+
+                // Si deseas cargar todos los turistas nuevamente (opcional)
+                // cargarTuristas();
+                
+            })
+            .fail(function() {
+                alert('Error al registrar al turista.');
+            });
+    });
+    </script>
 
 <script>
 // Variables globales
