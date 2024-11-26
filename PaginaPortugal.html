@@ -93,65 +93,10 @@
         <li class="list-group-item"><a href="#" onclick="focusOnAttraction(38.6977, -9.4208, 'Paginas secundarias de la principal/Cascais.html')" aria-label="Ver atracción Cascais">Atracción 4: Cascais</a></li>
         <li class="list-group-item"><a href="#" onclick="focusOnAttraction(37.01937, -7.93223, 'Paginas secundarias de la principal/ElAlgarve.html')" aria-label="Ver atracción El Algarve" >Atracción 5: El Algarve</a></li>
     </ul>
-
-    <h2>Registrar Turista</h2>
-      <form id="turista-form">
-         <input type="text" id="nombre" placeholder="Nombre" required>
-         <input type="text" id="apellido" placeholder="Apellido" required>
-         <input type="text" id="pasaporte" placeholder="Pasaporte/DNI" required>
-         <button type="submit">Registrar</button>
-       </form>
-
-       <h2>Lista de Turistas Registrados</h2>
-         <ul id="lista-turistas"></ul>
         
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-        <script>
-        // Función para cargar turistas
-         function cargarTuristas() {
-            $.get('http://localhost:3000/turistas', function(data) {
-                const lista = $('#lista-turistas');
-                lista.empty(); // Limpiar la lista antes de agregar nuevos elementos
-                data.forEach(turista => {
-                    lista.append(`<li>${turista.nombre} ${turista.apellido} - ${turista.pasaporte}</li>`);
-                });
-            });
-        }
-        
-        // Llamar a la función al cargar la página
-        $(document).ready(function() {
-            cargarTuristas();
-        });
-// Manejar el envío del formulario
-$('#turista-form').on('submit', function(event) {
-        event.preventDefault(); // Evitar el envío normal del formulario
-
-        const turista = {
-            nombre: $('#nombre').val(),
-            apellido: $('#apellido').val(),
-            pasaporte: $('#pasaporte').val()
-        };
-
-        // Enviar datos a la API
-        $.post('http://localhost:3000/turistas', turista)
-            .done(function(data) {
-                alert('Turista registrado con éxito!');
-                $('#turista-form')[0].reset(); // Reiniciar el formulario
-                
-                // Agregar el nuevo turista a la lista sin recargar
-                $('#lista-turistas').append(`<li>${turista.nombre} ${turista.apellido} - ${turista.pasaporte}</li>`);
-
-                // Si deseas cargar todos los turistas nuevamente (opcional)
-                // cargarTuristas();
-                
-            })
-            .fail(function() {
-                alert('Error al registrar al turista.');
-            });
-    });
-    </script>
 
 <script>
 // Variables globales
